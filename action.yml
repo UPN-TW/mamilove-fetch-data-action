@@ -1,0 +1,12 @@
+name: 'Mamilove Fetch data'
+description: 'fetch mamilove api data in github action'
+inputs:
+  type: 
+    description: 'action type'
+    required: true
+outputs:
+  result:
+    description: 'result'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
