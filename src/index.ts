@@ -9,10 +9,11 @@ const actionsMap: Record<ActionType, any> = {
 }
 
 const main = async () => {
-  try {
-    const result = await actionsMap[actionType]() || '';
-    core.setOutput("result", result);
+  if (!actionsMap[actionType]) return core.setFailed('Invalid action type');
 
+  try {
+    const result = await actionsMap[actionType]();
+    core.setOutput("result", result);
   } catch (error) {
     // @ts-ignore
     core.setFailed(error.message);
