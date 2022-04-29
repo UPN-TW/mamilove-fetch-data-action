@@ -34,7 +34,7 @@ $ npm run build
 ## Example usage
 
 ```
-uses: actions/mamilove-fetch-data-action@v1.0
+uses: UPN-TW/mamilove-fetch-data-action@v1.0.0
 with:
   type: 'latest-news'
 ```
