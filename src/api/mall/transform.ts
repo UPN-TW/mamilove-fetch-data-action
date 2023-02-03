@@ -5,7 +5,7 @@ const matchPattern = {
 
 export const transformCuration = (apiResponse) => {
     const data = apiResponse.data;
-    const latestEvents = data.groupbuySets[0].data
+    const latestEvents = data.groupbuyCurations[0].data
     const eventPaths = latestEvents.map(event => event.path)
 
     const path = eventPaths.find(path => path.includes(matchPattern.curation))
@@ -14,7 +14,7 @@ export const transformCuration = (apiResponse) => {
 
 export const transformGroupbuy = (apiResponse) => {
     const data = apiResponse.data;
-    const latestEvents = data.groupbuySets[0].data
+    const latestEvents = data.groupbuyCurations[0].data
     const eventPaths = latestEvents.map(event => event.path)
 
     const path = eventPaths.find(path => path.includes(matchPattern.groupbuy))
